@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "530349269918",
+    "project_id": "uhealth3-19a30",
+    "storage_bucket": "uhealth3-19a30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530349269918:android:660cbc821e20993bb5ac8f",
+        "android_client_info": {
+          "package_name": "com.insan.project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530349269918-n1k79lnken0kt0o3ck47omuf8i9gc71m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.insan.project1",
+            "certificate_hash": "6be6b2317f0d75451aabe6e7e3292c57524c3e6e"
+          }
+        },
+        {
+          "client_id": "530349269918-t85vodoosqq0g7v7h7jkatfpdusomaal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZL6l5qAW82uziGF_ydKc8B3GS5PsRA1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530349269918-t85vodoosqq0g7v7h7jkatfpdusomaal.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530349269918-05gg4njre90kambhi7r3ciqbftbtn3jq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.insan.project1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
