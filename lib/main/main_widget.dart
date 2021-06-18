@@ -10,7 +10,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 Future<double> CalcAllEatCalories(UsersRecord mainUsersRecord) async {
   List<DocumentReference> documentLists =
       mainUsersRecord.selectedMeals.toList();
@@ -39,15 +38,10 @@ Future<double> CalcAllTrainCalories(UsersRecord mainUsersRecord) async {
   return allSum;
 }
 
-
-
 class MainWidget extends StatefulWidget {
   MainWidget({
     Key key,
-
   }) : super(key: key);
-
-  
 
   @override
   _MainWidgetState createState() => _MainWidgetState();
@@ -193,7 +187,7 @@ class _MainWidgetState extends State<MainWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
                       child: Text(
-                        'Your Meals',
+                        'My Meals',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           fontSize: 18,
@@ -205,11 +199,12 @@ class _MainWidgetState extends State<MainWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.05,
-                          decoration: BoxDecoration(),
-                          child: ForFutureLearn(mainUsersRecors: mainUsersRecord,)
-                          
-                        ),
+                            decoration: BoxDecoration(),
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                child: ForFutureLearn(
+                                  mainUsersRecors: mainUsersRecord,
+                                ))),
                       ],
                     )
                   ],
@@ -477,7 +472,7 @@ class _MainWidgetState extends State<MainWidget> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(20, 1, 0, 0),
                       child: Text(
-                        'Your Trainings',
+                        'My Trainings',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           fontSize: 18,
@@ -486,9 +481,10 @@ class _MainWidgetState extends State<MainWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                      child: ForFutureLearn2(mainUsersRecors: mainUsersRecord,)
-                    )
+                        padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                        child: ForFutureLearn2(
+                          mainUsersRecors: mainUsersRecord,
+                        ))
                   ],
                 ),
                 Divider(
@@ -683,7 +679,6 @@ class _MainWidgetState extends State<MainWidget> {
   }
 }
 
-
 class ForFutureLearn extends StatelessWidget {
   var mainUsersRecors;
 
@@ -695,20 +690,20 @@ class ForFutureLearn extends StatelessWidget {
       child: FutureBuilder(
         future: CalcAllEatCalories(mainUsersRecors),
         builder: (BuildContext context, AsyncSnapshot<double> snapshot) {
-          return Text(snapshot.data.toString(),
-          style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF670974),
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+          return Text(
+            snapshot.data.toString(),
+            style: FlutterFlowTheme.bodyText1.override(
+              fontFamily: 'Poppins',
+              color: Color(0xFF670974),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           );
         },
       ),
     );
   }
 }
-
 
 class ForFutureLearn2 extends StatelessWidget {
   var mainUsersRecors;
@@ -721,13 +716,14 @@ class ForFutureLearn2 extends StatelessWidget {
       child: FutureBuilder(
         future: CalcAllTrainCalories(mainUsersRecors),
         builder: (BuildContext context, AsyncSnapshot<double> snapshot) {
-          return Text(snapshot.data.toString(),
-          style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF670974),
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+          return Text(
+            snapshot.data.toString(),
+            style: FlutterFlowTheme.bodyText1.override(
+              fontFamily: 'Poppins',
+              color: Color(0xFF670974),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           );
         },
       ),
